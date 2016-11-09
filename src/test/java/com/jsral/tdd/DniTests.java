@@ -7,20 +7,26 @@ public class DniTests {
     @Test
     public void testValidDnis() throws InvalidDni
     {
-        Dni.parse("7.983.231-T");
-        Dni.parse("7983231 T");
-        Dni.parse("7983231T");
+        Dni.parse("7.873.231-D");
+        Dni.parse("7873231 D");
+        Dni.parse("7873231D");
     }
 
     @Test(expected = InvalidDni.class)
     public void testInvalidLetterDni() throws InvalidDni
     {
-        Dni.parse("7.983.231-R");
+        Dni.parse("7.873.231-I");
+    }
+
+    @Test(expected = InvalidDni.class)
+    public void testInvalidExpectedLetterDni() throws InvalidDni
+    {
+        Dni.parse("7.873.231-T");
     }
 
     @Test(expected = InvalidDni.class)
     public void testInvalidNumberDni() throws InvalidDni
     {
-        Dni.parse("X7.983.231-R");
+        Dni.parse("X7.873.231-D");
     }
 }

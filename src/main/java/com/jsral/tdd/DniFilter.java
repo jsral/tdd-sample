@@ -6,11 +6,6 @@ public class DniFilter {
 
     private String id;
 
-    public DniFilter(String id)
-    {
-        this.id = id;
-    }
-
     public int getFilteredNumber() throws InvalidDni {
         String filteredId = id.replaceAll(ID_FILTER_PATTERN, "");
         try {
@@ -18,5 +13,14 @@ public class DniFilter {
         } catch (NumberFormatException e) {
             throw new InvalidDni(e);
         }
+    }
+
+    public char getLetter()
+    {
+        return Character.toUpperCase(id.charAt(id.length()-1));
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
