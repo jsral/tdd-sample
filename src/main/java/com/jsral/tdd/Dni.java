@@ -14,8 +14,7 @@ public class Dni {
         DniFilter filter = new DniFilter();
         DniChecker checker = new DniChecker();
 
-        filter.setId(id);
-        checker.verify(filter.getFilteredNumber(), filter.getLetter());
+        checker.verify(filter.getFilteredNumber(id), filter.getLetter(id));
     }
 
     public static void parse(String id) throws InvalidDni
