@@ -2,7 +2,7 @@ package com.jsral.tdd;
 
 import org.junit.Test;
 
-public class DniTests {
+public class DniTest {
 
     @Test
     public void testValidDnis() throws InvalidDni
